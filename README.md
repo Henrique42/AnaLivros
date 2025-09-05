@@ -47,11 +47,40 @@ AnaLivros é uma API Web em .NET Core para buscar, salvar e analisar livros publ
 
 3. Execute a API e abra o Swagger para testar os Endpoints. Os mais importantes são:
 
+### Banco de Dados
+
+O Banco de dados utilizado foi o MongoDB.
+
+**Informações Extras:**
+-   Nome: BookStore
+-   Coleção: Books
+-   Exemplo de entrada:
+
+```bash
+db.Books.insertMany([
+  {
+    title: "Casas estranhas",
+    authors: ["Uketsu", "Jefferson José Teixeira"],
+    year: 2025,
+    isbn: "9788551013137",
+    review: 8.0
+  },
+  {
+    title: "Metamorfose",
+    authors: ["Franz Kafka"],
+    year: null,
+    isbn: "9786580210008",
+    review: 9.5
+  }
+]);
+
+```
+
 ### Endpoints
 
 >GET /api/books/{isbn}
 
-- Busca um livro na API Externa pelo ISBN.
+- Busca um livro na API Externa pelo ISBN. Teste: 9788545702870
 
 >POST /api/books/{isbn}/save?review={review}
 
